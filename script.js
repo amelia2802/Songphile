@@ -1,4 +1,4 @@
-import { musicData } from '/data.js'
+import { musicData } from './data.js'
 
 const emotionRadios = document.getElementById('emotion-radios')
 const getSongBtn = document.getElementById('play-song-btn')
