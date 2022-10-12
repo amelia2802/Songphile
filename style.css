@@ -7,8 +7,7 @@ body{
 header{
     background-color: rgb(26, 24, 24);
     width: 100%;
-    position: fixed;
-    height: 12%;
+    height: 15vh;
     
 }
 
@@ -147,25 +146,29 @@ input[type="radio"]{
     border: 2px solid #bd301d;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     body{
         width: 100vw;
         margin: auto;
         overflow-x: hidden;
+        
     }
 
     .header{
         width: 100vw;
-      position: fixed;  
+        height: 8vh;
+        
     }
 
-
     label{
-        font-size: 1em;
+        font-size: 3rem;
     }
 
     .controls-container{
-        width: 50vw;
+        padding: 1em;
+        width: 80vw;
+        margin: auto;
+       
     }
 
     .song-modal{
@@ -175,7 +178,12 @@ input[type="radio"]{
     .logo-text{
         font-size:19px;
         text-align:center;
-        margin-top: 0;
+        font-size: 3rem;
+    }
+
+    .play-song-btn{
+        font-size: 3rem;
+        margin-top: 14px;
     }
 }
 
