@@ -160,7 +160,7 @@ input[type="radio"]{
     }
 
     label{
-        font-size: 3rem;
+        font-size: 1rem;
     }
 
     .controls-container{
@@ -175,13 +175,13 @@ input[type="radio"]{
     }
 
     .logo-text{
-        font-size:19px;
+        font-size:1rem;
         text-align:center;
         font-size: 3rem;
     }
 
     .play-song-btn{
-        font-size: 3rem;
+        font-size: 1rem;
         margin-top: 14px;
     }
 }
