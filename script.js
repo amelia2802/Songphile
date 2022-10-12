@@ -27,7 +27,7 @@ function closeModal(){
 function renderSong(){
     const songObject = getSingleSongObject()
     songModalInner.innerHTML =  `
-        <iframe class="mood-song" src="${songObject.url}" allow="autoplay;encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe class="mood-song" src="${songObject.url}" allow="autoplay;encrypted-media; fullscreen; picture-in-picture"></iframe>
         `
         
     songModal.style.display = 'flex'

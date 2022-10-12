@@ -156,15 +156,16 @@ input[type="radio"]{
 
     .header{
         width: 100vw;
+      position: fixed;  
     }
+
 
     label{
         font-size: 1em;
     }
 
     .controls-container{
-        padding: 1em;
-        width: 80vw;
+        width: 50vw;
     }
 
     .song-modal{
@@ -174,7 +175,7 @@ input[type="radio"]{
     .logo-text{
         font-size:19px;
         text-align:center;
-
+        margin-top: 0;
     }
 }
 
