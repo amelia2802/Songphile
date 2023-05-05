@@ -15,7 +15,7 @@ export const musicData = [{
     url: "https://open.spotify.com/embed/track/3fWMFwaJil8fD14JCgwbcL?utm_source=generator"
 },
 {
-    genre: ["energetic", "romantic"],
+    genre: ["workout", "romantic"],
     url: "https://open.spotify.com/embed/track/5a5Csh7BgPhrNf61uQs2FF?utm_source=generator"
 },
 {
@@ -31,19 +31,19 @@ export const musicData = [{
     url: "https://open.spotify.com/embed/track/6ocOeSjnWPcSTaSsi0zIdY?utm_source=generator"
 },
 {
-    genre: ["energetic"],
+    genre: ["workout"],
     url: "https://open.spotify.com/embed/track/5nujrmhLynf4yMoMtj8AQF?utm_source=generator",
 },
 {
-    genre: ["energetic"],
+    genre: ["workout"],
     url: "https://open.spotify.com/embed/track/2iXVckhPy7tP0wV9DvlrjZ?utm_source=generator"
 },
 {
-    genre: ["energetic"],
+    genre: ["workout"],
     url: "https://open.spotify.com/embed/track/0biCSADTAblvLTLtJz4pXO?utm_source=generator"
 },
 {
-    genre: ["energetic"],
+    genre: ["workout"],
     url: "https://open.spotify.com/embed/track/0pqnGHJpmpxLKifKRmU6WP?utm_source=generator"
 },
 {
@@ -71,7 +71,7 @@ export const musicData = [{
     url: "https://open.spotify.com/embed/track/6YycppSAeGtSvwmu8qCcr2?utm_source=generator"
 },
 {
-    genre: ["energetic"],
+    genre: ["workout"],
     url: "https://open.spotify.com/embed/track/03jhnLcIT8C4DhXnNecOZv?utm_source=generator"
 },
 {
@@ -97,4 +97,10 @@ export const musicData = [{
 {
     genre: ["sad"],
     url: "https://open.spotify.com/embed/track/3pE3QvVrRLyno5TwEBDRFo?utm_source=generator"
-},]
+},
+{
+    genre: ["workout"],
+    url: "https://open.spotify.com/embed/track/3pjZQfBShK7O01QvtQwmcg?utm_source=generator&theme=0"
+},
+
+]
