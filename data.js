@@ -19,7 +19,7 @@ export const musicData = [{
     url: "https://open.spotify.com/embed/track/5a5Csh7BgPhrNf61uQs2FF?utm_source=generator"
 },
 {
-    genre: ["energetic"],
+    genre: ["workout"],
     url: "https://open.spotify.com/embed/track/3C0nOe05EIt1390bVABLyN?utm_source=generator"
 },
 {
