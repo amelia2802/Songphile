@@ -15,8 +15,20 @@ A random music player which play songs according to your moods.
 | ------------- |:-------------:|
 | romantic     | 07 |
 | sad     | 07     |
-| energetic | 07     |
+| energetic | 08     |
 | fresh| 07     |
+
+## Songs available
+| Title         |   Genre | Title         |   Genre |Title         |   Genre |Title         |   Genre |
+| ------------- |:-------------:| ------------- |:-------------:| ------------- |:-------------:| ------------- |:-------------:|
+| Senorita     | romantic | Bheegi Bheegi    | sad |Believer   |workout  |Challa   |fresh  |
+| Tumse Hi    | romantic    |Toh Phir Aao(Lounge version)    | sad |One Love   | workout |Aao milo chalo   |fresh  |
+| Kya mujhe pyar hai | romantic    |My Heart will go on    | sad |We will rock you| workout  |Yeh ishq haye   |fresh  |
+| Tu hi meri shab hai| romantic     |Aaoge jab tum     | sad |Nashe si chad gayi|workout |Aankhon mein   |fresh  |
+| Bheegi si Bhagi si | romantic     |Woh Lamhe   | sad |Raftarein| workout  |In dino   |fresh  |
+| Zara Zara | romantic     |----   | sad |On the floor| workout  |Masakali   |fresh  |
+|  One Love | romantic     |----   | sad |Mauja Hi mauja| workout  |Doorie  |fresh  |
+|  | romantic     |----   | sad |Levitating| workout  |
 
 
 ## Contribution guideline:
@@ -31,7 +43,7 @@ A random music player which play songs according to your moods.
     url: "the spotify url"
     },
   ```
-  - If you create a new **genre** then update the readme **table** also
+  - If you create a new **genre** or add a song then update the readme **tables** also
   - To the get the song's url read the [Spotify Web API documentation](https://developer.spotify.com/documentation/web-api/)
     or
   - Click on the **``` ... ```** of your song
