@@ -15,7 +15,7 @@ A random music player which play songs according to your moods.
 | ------------- |:-------------:|
 | romantic     | 07 |
 | sad     | 07     |
-| energetic | 08     |
+| workout | 08     |
 | fresh| 07     |
 
 ## Songs available
