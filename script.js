@@ -1,81 +1,90 @@
-import { musicData } from './data.js'
+import { musicData } from './data.js';
 
-const emotionRadios = document.getElementById('emotion-radios')
-const getSongBtn = document.getElementById('play-song-btn')
-const songModalInner = document.getElementById('song-modal-inner')
-const songModal = document.getElementById('song-modal')
-const songModalCloseBtn = document.getElementById('song-modal-close-btn')
+const emotionRadios = document.getElementById('emotion-radios');
+const songModalInner = document.getElementById('song-modal-inner');
+const songModal = document.getElementById('song-modal');
+const songModalCloseBtn = document.getElementById('song-modal-close-btn');
+const toggleBtn = document.getElementById("toggle")
 
-emotionRadios.addEventListener('change', highlightCheckedOption)
+toggleBtn.addEventListener('click', () => {
+    const menu = document.querySelector(".menu");
+    const header = document.querySelector(".header");
+    const radios = document.querySelectorAll(".radio");
 
-songModalCloseBtn.addEventListener('click', closeModal)
-
-getSongBtn.addEventListener('click', renderSong)
-
-function highlightCheckedOption(e){
-    const radios = document.getElementsByClassName('radio')
-    for (let radio of radios){
-        radio.classList.remove('highlight')
+    // Check the current background color and toggle between two states
+    if (menu.style.backgroundColor === "rgb(255, 249, 238)") {
+        // Reset to original colors
+        menu.style.backgroundColor = "";
+        document.querySelector(".logo-text").style.color = "";
+        header.style.backgroundColor = "";
+        radios.forEach(radio => radio.style.color = "");  // Reset each .radio element's color
+        toggleBtn.innerText = "🌙";  // Dark mode icon
+    } else {
+        // Set to light mode colors
+        menu.style.backgroundColor = "rgb(255, 249, 238)";
+        document.querySelector(".logo-text").style.color = "black";
+        header.style.backgroundColor = "rgb(246, 229, 215)";
+        radios.forEach(radio => radio.style.color = "black");  // Apply color to each .radio element
+        toggleBtn.innerText = "☀️";  // Light mode icon
     }
-    document.getElementById(e.target.id).parentElement.classList.add('highlight')
-}
+});
 
-function closeModal(){
-    songModal.style.display = 'none'
-}
 
-function renderSong(){
-    const songObject = getSingleSongObject()
-    songModalInner.innerHTML =  `
-        <iframe class="mood-song" src="${songObject.url}" allow="autoplay;encrypted-media; fullscreen; picture-in-picture"></iframe>
-        `
-        
-    songModal.style.display = 'flex'
-    console.log(songObject.url)
-}
 
-function getSingleSongObject(){
-    const songsArray = getMatchingSongsArray()
-    
-    if(songsArray.length === 1){
-        return songsArray[0]
+
+
+// Event listeners
+emotionRadios.addEventListener('change', highlightCheckedOption);
+songModalCloseBtn.addEventListener('click', closeModal);
+
+function highlightCheckedOption(e) {
+    const radios = document.getElementsByClassName('radio');
+    for (let radio of radios) {
+        radio.classList.remove('highlight');
     }
-    else{
-        const randomNumber = Math.floor(Math.random() * songsArray.length)
-        return songsArray[randomNumber]
-    }
+    document.getElementById(e.target.id).parentElement.classList.add('highlight');
 }
 
-function getMatchingSongsArray(){     
-    if(document.querySelector('input[type="radio"]:checked')){
-        const selectedEmotion = document.querySelector('input[type="radio"]:checked').value
-        
-        const matchingSongsArray = musicData.filter(function(song){
-                return song.genre.includes(selectedEmotion)          
-        })
-        return matchingSongsArray 
-    }  
+function closeModal() {
+    songModal.style.display = 'none';
 }
 
-function getEmotionsArray(songs){
-    const emotionsArray = []    
-    for (let song of songs){
-        for (let emotion of song.genre){
-            if (!emotionsArray.includes(emotion)){
-                emotionsArray.push(emotion)
+// Make playSong a global function by attaching it to window
+window.playSong = function(emotion) {
+    const songsArray = musicData.filter(song => song.genre.includes(emotion));
+    const songObject = songsArray.length === 1 ? songsArray[0] : songsArray[Math.floor(Math.random() * songsArray.length)];
+
+    songModalInner.innerHTML = `
+        <iframe draggable="true" class="mood-song" src="${songObject.url}" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    `;
+    songModal.style.display = 'flex';
+};
+
+function getEmotionsArray(songs) {
+    const emotionsArray = [];
+    for (let song of songs) {
+        for (let emotion of song.genre) {
+            if (!emotionsArray.includes(emotion)) {
+                emotionsArray.push(emotion);
             }
         }
     }
-    return emotionsArray
+    return emotionsArray;
 }
 
-function renderEmotionsRadios(songs){
+function renderEmotionsRadios(songs) {
+    let radioItems = ``;
+    const emotions = getEmotionsArray(songs);
+    
+    for (let emotion of emotions) {
+        const matchingSong = songs.find(song => song.genre.includes(emotion));
+        const imageUrl = matchingSong.img || 'default-image.jpg';
         
-    let radioItems = ``
-    const emotions = getEmotionsArray(songs)
-    for (let emotion of emotions){
         radioItems += `
-        <div class="radio">
+        <div class="radio" id="${emotion}-radio">
+            <section class="album-img">
+                <img src="${imageUrl}" alt="${emotion} image" />
+            </section>
             <label for="${emotion}">${emotion}</label>
             <input
             type="radio"
@@ -83,13 +92,11 @@ function renderEmotionsRadios(songs){
             value="${emotion}"
             name="emotions"
             >
-        </div>`
+            <button class="play-song-btn" onclick="playSong('${emotion}')">▶</button>
+        </div>`;
     }
-    emotionRadios.innerHTML = radioItems
+
+    emotionRadios.innerHTML = radioItems;
 }
 
-renderEmotionsRadios(musicData)
-
-
-
-
+renderEmotionsRadios(musicData);
