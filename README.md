@@ -2,7 +2,7 @@
 A random music player which play songs according to your moods.
 
 # Demo
-[!demo](https://user-images.githubusercontent.com/49182604/195147981-351fdc48-12ac-4cc3-b774-dd8cabdb2f2c.mp4)
+[d2aebefc-7531-4887-9b49-b2713fc2b42a.webm](https://github.com/user-attachments/assets/fe10b3bd-cf31-44b9-b149-a25973752742)
 
 ## Tools/Technology:
 - HTML
